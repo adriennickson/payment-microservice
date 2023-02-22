@@ -1,0 +1,42 @@
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+default_section = "THIRDPARTY"
+known_first_party = []
+known_third_party = ["django"]
+
+[tool.pylint.MESSAGE_CONTROL]
+disable = """
+    line-too-long,
+    abstract-method,
+    no-member,
+"""
+enable = "useless-suppression"
+
+[tool.pylint.REPORTS]
+reports="no"
+
+[tool.pylint.messages_control]
+disable = [
+  "C0114", # missing-module-docstring
+  "C0115", # missing-class-docstring
+  "C0116", # missing-function-docstring
+  "C0414", # useless-import-alias
+  "W0212", # protected-access
+  "W0611", # unused-import
+  "E0401", # import-error
+  # "F5101", # django-not-available
+  "C0415", # import-outside-toplevel
+]
+
+[tool.pylint.FORMAT]
+max-line-length="88"
+
+[tool.pylint.BASIC]
+good-names = "_,i,e,setUp,tearDown,maxDiff"
+min-public-methods=0
