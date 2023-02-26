@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 
@@ -12,6 +14,9 @@ class ClientPlatform(models.TextChoices):
 
 
 class Customer(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     email = models.EmailField()
     platform = models.CharField(max_length=16, choices=ClientPlatform.choices)
 

@@ -1,3 +1,7 @@
-# from django.db import models
+from django.db import models
 
-# Create your models here.
+from .order import Order
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(to=Order, on_delete=models.CASCADE)
