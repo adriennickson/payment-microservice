@@ -1,2 +1,4 @@
 Django>=3.0,<4.0
 psycopg2>=2.8
+stripe==5.2.0
+python-dotenv==1.0.0
