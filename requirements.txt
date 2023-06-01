@@ -1,4 +1,8 @@
-Django>=3.0,<4.0
+Django>=3.2,<4.0
+djangorestframework>=3.14.0
+drf-spectacular>=0.26.2
 psycopg2>=2.8
 stripe==5.2.0
 python-dotenv==1.0.0
+django-extensions>=3.2.1
+django-cors-headers>=4.0.0

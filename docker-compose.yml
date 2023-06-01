@@ -11,7 +11,7 @@ services:
   web:
     container_name: diehli_finance_web
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver --settings=diehli_finance.settings.dev 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
