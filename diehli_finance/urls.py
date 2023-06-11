@@ -23,7 +23,7 @@ from stripe_payments.views import StripeViewSet
 
 router = DefaultRouter()
 router.register(r"accounts", AccountViewset, basename="account")
-router.register(r"payment/stripe", StripeViewSet, basename="user")
+router.register(r"payment/stripe", StripeViewSet, basename="stripe")
 
 urlpatterns = [
     path("admin/", admin.site.urls),

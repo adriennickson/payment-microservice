@@ -1,5 +1,4 @@
 from decimal import Decimal
-from typing import Any
 
 from django.core.validators import MinValueValidator
 from rest_framework import serializers
@@ -20,6 +19,8 @@ class CheckoutSessionRequestSerializer(serializers.Serializer):
     email = serializers.EmailField()
     platform = serializers.CharField(max_length=30, default="lezing")
     currency = serializers.CharField(max_length=3, default="eur")
-    line_items: Any = serializers.ListSerializer(child=CheckoutItemSerializer())
+    line_items: serializers.ListSerializer[
+        CheckoutItemSerializer
+    ] = serializers.ListSerializer(child=CheckoutItemSerializer())
     success_url = serializers.URLField(default="http://127.0.0.1:8000/success/")
     cancel_url = serializers.URLField(default="http://127.0.0.1:8000/cancel/")
