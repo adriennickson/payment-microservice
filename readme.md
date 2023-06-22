@@ -1,4 +1,5 @@
 # Payments Management Microservice
+&copy;[DIEHLI](https://diehli.com/)
 
 Microservice for invoice and payment management.
 
